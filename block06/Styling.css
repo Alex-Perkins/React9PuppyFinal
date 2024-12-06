@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(255, 255, 255)
+}
+
+h1 {
+  padding-left: 90px;
+  color: rgb(160, 38, 38);
+}
+
+table {
+    border-collapse: collapse;
+    min-height: 200px;
+    min-width: 500px
+}
+
+table th {
+    background-color: rgb(165, 167, 172);
+}
+
+table tr:nth-child(2) {
+    background-color: rgb(255, 228, 138);
+}
+
+table tr:nth-child(3) {
+    background-color: rgb(255, 228, 138);
+}
+
+th {
+    text-align: center;
+    border: 2px solid black;
+    font-size: 22px;
+    padding: 8px;
+}
+
+td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 2px;
+    margin: 10px;
+}
+
+ul {
+    text-align: left;
+    border: 1px;
+}
+
+ol {
+    text-align: left;
+    border: 1px;
+}
+
+.Fridge {
+    color: blue;
+    font-size: 20px;
+}
+
+.Freezer {
+    color: blue;
+    font-size: 20px;
+    padding-top: 19px;
+}
+
+img#XmasDinner1 {
+    border: 3px solid black;
+    width: 29%;
+
+}
+
+.No2 {
+    position: relative;
+    bottom: 420px;
+    left: 570px;
+}
+
+img#XmasDinner2 {
+    border: 3px solid black;
+    width: 26%;
+    position: relative;
+    bottom: 428px;
+    left: 555px;
+}
