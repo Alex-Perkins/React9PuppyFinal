@@ -8,7 +8,7 @@ export const playersApi = createApi({
     reducerPath: "playersApi",
     baseQuery: fetchBaseQuery({
 
-        baseUrl: "https://fsa-puppy-bowl.herokuapp.com/api/2803-PUPPIES-AP",
+        baseUrl: "https://fsa-puppy-bowl.herokuapp.com/api/2803-PUPPIES-APS",
 
     }),
     tagTypes: ["player", "players"],
@@ -17,13 +17,13 @@ export const playersApi = createApi({
         //Show all players endpoint
         playersList: build.query({
             query: () => "/players",
-            provideTags: ["players"],
+            provideTags: ["players", "player"],
         }),
 
         //Display more information about a singular player endpoint
         playerById: build.query({
             query: (id) => `/players/${id}`,
-            providesTags: ["player"],
+            providesTags: ["players", "player"],
         }),
 
         //Delete Button Endpoint
@@ -34,7 +34,16 @@ export const playersApi = createApi({
             }),
             invalidatesTags: ["player", "players"],
         }),
-        
+
+        createPlayer: build.mutation({
+            query: (body) => ({
+                url: `/players`,
+                method: "POST",
+                body,
+            }),
+            invalidatesTags: ["player", "players"],
+        }),
+
     }),
 });
 
@@ -43,4 +52,5 @@ export const {
     usePlayersListQuery,
     usePlayerByIdQuery,
     useDeleteButtonMutation,
+    useCreatePlayerMutation,
 } = playersApi;

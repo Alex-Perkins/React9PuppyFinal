@@ -11,7 +11,7 @@ import CreateNewPlayer from "./CreatePlayer";
 export default function PlayersList() {
 
   const { data, error, isLoading } = usePlayersListQuery();
-  const [searchParameter, setSearchParameter] = useState("");
+
 
   //Is or isnt loading screen
   if (isLoading) {
@@ -34,18 +34,20 @@ export default function PlayersList() {
     );
   }
 
-  const playersToDisplay =
-    searchParameter !== "" && data.players
-      ? data.players.filter(
-        (players) =>
-          player.name.toUpperCase().includes(searchParameter.toUpperCase()) ||
-        players.breed.toLowerCase().includes(searchParameter.toLowerCase())
-      )
-      : data.players;
+  // const playersToDisplay =
+  //   searchParameter !== "" && data.players
+  //     ? data.players.filter(
+  //       (players) =>
+  //         player.name.toUpperCase().includes(searchParameter.toUpperCase()) ||
+  //       players.breed.toLowerCase().includes(searchParameter.toLowerCase())
+  //     )
+  //     : data.players;
   //Create cards that the information in the API will populate
   return (
 
     <div className="playersList">
+
+<CreateNewPlayer />
 
       {data.data.players.map((playersObject) => (
 
